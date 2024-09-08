@@ -141,6 +141,21 @@
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('show');
         });
+        let lastScrollTop = 0;
+        const header = document.getElementById('main-header');
+
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop) {
+                // Scrolling down, hide header
+                header.style.top = "-100px"; // Adjust value based on header height
+            } else {
+                // Scrolling up, show header
+                header.style.top = "0";
+            }
+            lastScrollTop = scrollTop;
+        });
+    </script>
     </script>
 </body>
 </html>
