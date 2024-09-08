@@ -10,14 +10,16 @@ body {
     color: #0b1f3d; /* Dark blue text */
 }
 
+/* Header Styling */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
     background-color: #0b1f3d; /* Dark blue background for header */
-    position: sticky;
+    position: fixed;
     top: 0;
+    width: 100%;
     z-index: 10;
 }
 
@@ -46,6 +48,33 @@ nav ul li a:hover {
     color: #ff7f33; /* Orange hover effect */
 }
 
+/* Hamburger Menu Styling */
+.hamburger-icon {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+}
+
+.hamburger-icon span {
+    display: block;
+    height: 3px;
+    width: 25px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: 0.3s;
+}
+
+/* Hide the navigation links on small screens */
+#nav-links {
+    transition: max-height 0.3s ease-in-out;
+}
+
+#nav-links.show {
+    display: block;
+}
+
 /* Landing Page Section */
 #landing-page {
     display: flex;
@@ -54,14 +83,14 @@ nav ul li a:hover {
     align-items: center;
     height: 100vh;
     background-color: #f0f4ff; /* Light background color */
+    padding: 20px;
 }
 
 .container {
     text-align: center;
 }
 
-
-/* Updated subheading styling */
+/* Subheading styling */
 .subheading {
     font-size: 2.5rem;
     color: #0b1f3d;
@@ -73,12 +102,12 @@ nav ul li a:hover {
 }
 
 .presents {
-    font-style: italic; /* Italic for "presents" */
-    display: block; /* Places "presents" on a new line */
+    font-style: italic;
+    display: block;
     font-size: 1.2rem;
 }
 
-
+/* Main Title and Description */
 h1 {
     font-size: 4rem;
     color: #ff7f33; /* Orange color for "Hack.ai" */
@@ -118,6 +147,7 @@ h2 {
     background-color: #e66700;
 }
 
+/* General Section Styling */
 .section {
     padding: 50px 20px;
     text-align: center;
@@ -129,6 +159,7 @@ h2 {
     color: #ff7f33;
 }
 
+/* Theme and Objectives Cards */
 .theme-content, .about-content, .objectives-content {
     display: flex;
     justify-content: space-around;
@@ -159,6 +190,7 @@ h2 {
     margin-bottom: 10px;
 }
 
+/* About Us Section */
 .about-container {
     display: flex;
     align-items: center;
@@ -189,6 +221,7 @@ h2 {
     color: #333;
 }
 
+/* Highlights Section */
 .highlights-list {
     list-style: none;
     display: flex;
@@ -211,6 +244,7 @@ h2 {
     color: #ff7f33;
 }
 
+/* Footer */
 footer {
     text-align: center;
     padding: 20px;
@@ -222,16 +256,29 @@ footer p {
     font-size: 1rem;
 }
 
-/* Responsive Design for Smaller Devices */
+/* Responsive Design */
 @media (max-width: 768px) {
-    header {
+    nav ul {
+        display: none;
         flex-direction: column;
-        align-items: flex-start;
+        background-color: #0b1f3d;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
     }
 
-    nav ul {
-        flex-direction: column;
-        margin-top: 20px;
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        text-align: center;
+        margin: 15px 0;
+    }
+
+    .hamburger-icon {
+        display: flex;
     }
 
     .theme-content, .about-content, .objectives-content {
