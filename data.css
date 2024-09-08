@@ -1,0 +1,283 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffffff; /* Main white background */
+    color: #0b1f3d; /* Dark blue text */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #0b1f3d; /* Dark blue background for header */
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo-container img {
+    height: 80px;
+    margin-right: 10px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff7f33; /* Orange hover effect */
+}
+
+/* Landing Page Section */
+#landing-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f4ff; /* Light background color */
+}
+
+.container {
+    text-align: center;
+}
+
+
+/* Updated subheading styling */
+.subheading {
+    font-size: 2.5rem;
+    color: #0b1f3d;
+    margin-bottom: 10px;
+}
+
+.subheading strong {
+    font-weight: bold;
+}
+
+.presents {
+    font-style: italic; /* Italic for "presents" */
+    display: block; /* Places "presents" on a new line */
+    font-size: 1.2rem;
+}
+
+
+h1 {
+    font-size: 4rem;
+    color: #ff7f33; /* Orange color for "Hack.ai" */
+    margin: 20px 0;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #0b1f3d; /* Dark blue for subtitle */
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 1.2rem;
+    color: #0b1f3d;
+}
+
+/* Buttons for the landing page */
+.landing-buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 24px;
+    background-color: #ff7f33;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #e66700;
+}
+
+.section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ff7f33;
+}
+
+.theme-content, .about-content, .objectives-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.theme-card, .objective {
+    background-color: #f0f4ff;
+    padding: 20px;
+    margin: 20px;
+    width: 250px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    border: 1px solid #e0e0e0;
+}
+
+.theme-card:hover, .objective:hover {
+    transform: translateY(-10px);
+}
+
+.theme-card i, .objective i {
+    color: #ff7f33;
+    margin-bottom: 10px;
+}
+
+.theme-card h3, .objective h3 {
+    margin-bottom: 10px;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 50px 20px;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    width: 400px;
+}
+
+.about-text {
+    max-width: 600px;
+    text-align: left;
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    color: #0b1f3d;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.highlights-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.highlights-list li {
+    background-color: #f0f4ff;
+    padding: 15px 30px;
+    margin: 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #e0e0e0;
+}
+
+.highlights-list li i {
+    margin-right: 10px;
+    color: #ff7f33;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0b1f3d;
+}
+
+footer p {
+    color: #fff;
+    font-size: 1rem;
+}
+
+/* Responsive Design for Smaller Devices */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .theme-content, .about-content, .objectives-content {
+        flex-direction: column;
+    }
+
+    .theme-card, .objective {
+        width: 90%;
+        margin: 10px 0;
+    }
+
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+    .about-image img {
+        width: 100%;
+    }
+
+    .highlights-list {
+        flex-direction: column;
+    }
+
+    .highlights-list li {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .subheading {
+        font-size: 1.2rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+}
