@@ -1,0 +1,814 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffffff; /* Main white background */
+    color: #0b1f3d; /* Dark blue text */
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #0b1f3d; /* Dark blue background for header */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    transition: top 0.3s ease-in-out; /* Smooth transition for hiding and showing */
+}
+
+.logo-container img {
+    height: 80px;
+    margin-right: 10px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff7f33; /* Orange hover effect */
+}
+
+/* Hamburger Menu Styling */
+.hamburger-icon {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+}
+
+.hamburger-icon span {
+    display: block;
+    height: 3px;
+    width: 25px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: 0.3s;
+}
+
+/* Hide the navigation links on small screens */
+#nav-links {
+    transition: max-height 0.3s ease-in-out;
+}
+
+#nav-links.show {
+    display: block;
+}
+
+/* Parallax Effect for the Landing Page */
+#landing-page {
+    background-image: url('11g.jpg'); /* option 12g image */
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff; /* White text for contrast */
+    text-align: center;
+    position: relative;
+}
+
+/* Overlay to Darken the Image for Better Text Visibility */
+#landing-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adds a dark overlay */
+    z-index: 1; /* Ensure it sits behind the content */
+}
+
+#landing-page .container {
+    position: relative;
+    z-index: 2; /* Place content above the overlay */
+}
+
+/* Subheading styling */
+.subheading {
+    font-size: 2.5rem;
+    color: #ff7f33;
+    margin-bottom: 10px;
+}
+
+.subheading strong {
+    font-weight: bold;
+}
+
+.presents {
+    font-style: italic;
+    display: block;
+    font-size: 1.2rem;
+}
+
+/* Main Title and Description */
+h1 {
+    font-size: 4rem;
+    color: #ff7f33; /* Orange color for "Hack.ai" */
+    margin: 20px 0;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #ffffff; /* White for subtitle */
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 1.2rem;
+    color: #ffffff; /* White text for better readability */
+}
+
+/* Buttons for the landing page */
+.landing-buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 24px;
+    background-color: #ff7f33;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #e66700;
+}
+
+/* Responsive for smaller devices */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .subheading {
+        font-size: 1.2rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+}
+
+
+/* General Section Styling */
+.section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ff7f33;
+}
+
+/* Theme and Objectives Cards */
+.theme-content, .about-content, .objectives-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.theme-card, .objective {
+    background-color: #f0f4ff;
+    padding: 20px;
+    margin: 20px;
+    width: 250px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    border: 1px solid #e0e0e0;
+}
+
+.theme-card:hover, .objective:hover {
+    transform: translateY(-10px);
+}
+
+.theme-card i, .objective i {
+    color: #ff7f33;
+    margin-bottom: 10px;
+}
+
+.theme-card h3, .objective h3 {
+    margin-bottom: 10px;
+}
+
+/* About Us Section */
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 50px 20px;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    width: 400px;
+}
+
+.about-text {
+    max-width: 600px;
+    text-align: left;
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    color: #0b1f3d;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/* Section for Event Schedule */
+#event-schedule {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #ffffff; /* Keep the background white for contrast */
+}
+
+#event-schedule h2 {
+    font-size: 2.5rem;
+    color: #0b1f3d; /* Dark blue color */
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Container for the two schedule boxes */
+.schedule-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Individual Schedule Box */
+.schedule-box {
+    background-color: #f0f4ff; /* Light background for the boxes */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 280px; /* Decreased width for a sleeker design */
+    height: 400px; /* Set height for a more compact look */
+    transition: transform 0.3s ease;
+    border: 2px solid #ff7f33; /* Orange border */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute space inside the box */
+}
+
+/* Hover effect for the schedule boxes */
+.schedule-box:hover {
+    transform: translateY(-10px);
+}
+
+/* Headings inside the boxes */
+.schedule-box h3 {
+    font-size: 1.5rem;
+    color: #0b1f3d; /* Dark blue */
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-bottom: 2px solid #ff7f33; /* Orange underline effect */
+    padding-bottom: 10px;
+    text-align: center; /* Center align the headings */
+}
+
+/* Styling the list of events */
+.schedule-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1rem; /* Slightly reduced font size for compactness */
+    flex-grow: 1; /* Allow list to take the available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; /* Spread items evenly inside the box */
+}
+
+.schedule-box ul li {
+    color: #333;
+    line-height: 1.4;
+}
+
+.schedule-box ul li strong {
+    color: #ff7f33; /* Orange for the time */
+    font-weight: bold;
+}
+
+/* Responsive for smaller devices */
+@media (max-width: 768px) {
+    .schedule-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .schedule-box {
+        width: 100%;
+        max-width: 400px;
+        height: auto; /* Allow height to adjust automatically for small devices */
+        margin-bottom: 20px;
+    }
+}
+
+
+In association with 
+/* In Association Section */
+#association {
+    padding: 60px 20px;
+    background-color: #f8f9fa; /* Light background for contrast */
+    text-align: center;
+}
+
+#association h2 {
+    font-size: 2.5rem;
+    color: #ff7f33; /* Orange color to match the theme */
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Container for Association Logos */
+.association-container {
+    display: flex;
+    justify-content: center; /* Center the logos */
+    align-items: center;
+    gap: 60px; /* Reduced gap between logos */
+    flex-wrap: wrap;
+}
+
+/* Individual Association Item */
+.association-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 200px; /* Adjust width if needed */
+    text-align: center;
+}
+
+/* Logo Styling */
+.association-logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for logos */
+}
+
+/* Association Text */
+.association-item p {
+    font-size: 1.2rem;
+    color: #0b1f3d; /* Dark blue text */
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Hover Effect */
+.association-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Hover shadow */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .association-container {
+        flex-direction: column;
+    }
+}
+
+
+Contact section
+/* Contact Section */
+#contact-section {
+    padding: 60px 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+#contact-section h2 {
+    font-size: 2.5rem;
+    color: #ff7f33;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#contact-section p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+/* Contact Card Container */
+.contact-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Individual Contact Card */
+.contact-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1;
+    max-width: 250px;
+    min-width: 220px;
+    text-align: center;
+}
+
+.contact-card h3 {
+    font-size: 1.5rem;
+    color: #0b1f3d;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.contact-card p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 0;
+}
+
+/* Email Card Styling */
+.email-card .btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #ff7f33;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.email-card .btn:hover {
+    background-color: #e66700;
+}
+
+/* Hover Effect for Contact Cards */
+.contact-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-card {
+        width: 100%;
+        max-width: 350px;
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
+/* Brochure Section */
+#brochure {
+    padding: 60px 20px;
+    background-color: #ffffff; /* White background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.brochure-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Brochure Preview Section */
+.brochure-preview {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brochure-image {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for brochure preview */
+}
+
+/* Brochure Details Section */
+.brochure-details {
+    flex: 1;
+    text-align: left;
+    padding: 20px;
+}
+
+.brochure-details h2 {
+    font-size: 2.5rem;
+    color: #0b1f3d;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.brochure-details p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Download Button */
+.brochure-btn {
+    padding: 15px 30px;
+    background-color: #ff7f33;
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.brochure-btn:hover {
+    background-color: #e66700;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .brochure-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .brochure-details {
+        text-align: center;
+    }
+}
+
+
+/* Event Highlights Section */
+#highlights {
+    padding: 60px 20px;
+    text-align: center;
+    background: linear-gradient(to bottom, #ffffff, #f0f4ff); /* Soft gradient background */
+    position: relative;
+    z-index: 1;
+}
+
+#highlights h2 {
+    font-size: 2.5rem;
+    color: #ff7f33;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+/* Custom Divider for Unique Look */
+#highlights::after {
+    content: '';
+    width: 50px;
+    height: 5px;
+    background-color: #ff7f33;
+    display: block;
+    margin: 0 auto 50px;
+    border-radius: 5px;
+}
+
+/* Container for Highlight Cards */
+.highlights-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Individual Highlight Card */
+.highlight-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    width: 280px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background: linear-gradient(135deg, #e0ecff, #ffffff);
+    border-top: 4px solid #ff7f33;
+}
+
+/* Hover Effect */
+.highlight-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Circular Icon Container */
+.icon-circle {
+    width: 70px;
+    height: 70px;
+    background-color: #ff7f33;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 15px;
+    position: relative;
+    z-index: 2;
+}
+
+.icon-circle img {
+    width: 40px;
+    height: 40px;
+    color: #fff;
+}
+
+/* Highlight Text */
+.highlight-card p {
+    font-size: 1.3rem;
+    color: #0b1f3d;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Custom Shape Behind Icon */
+.highlight-card::before {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background-color: #ff7f33;
+    top: -50%;
+    left: -50%;
+    border-radius: 50%;
+    z-index: 1;
+    transition: all 0.5s ease-in-out;
+    transform: scale(0);
+}
+
+.highlight-card:hover::before {
+    transform: scale(1);
+    opacity: 0.15;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .highlights-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .highlight-card {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0b1f3d;
+}
+
+footer p {
+    color: #fff;
+    font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #0b1f3d;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        text-align: center;
+        margin: 15px 0;
+    }
+
+    .hamburger-icon {
+        display: flex;
+    }
+
+    .theme-content, .about-content, .objectives-content {
+        flex-direction: column;
+    }
+
+    .theme-card, .objective {
+        width: 90%;
+        margin: 10px 0;
+    }
+
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+    .about-image img {
+        width: 100%;
+    }
+
+    .highlights-list {
+        flex-direction: column;
+    }
+
+    .highlights-list li {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .subheading {
+        font-size: 1.2rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+}
